@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>youtube</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        /* 最上方 */
+        .top {
+            width: 100%;
+            height: 5%;
+            /* background: red; */
+            position: fixed;
+        }
+
+        .logo {
+            position: absolute;
+            /* 垂直置中 */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .sign-in-top {
+            position: absolute;
+            right: 0;
+            /* 垂直置中 */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* 左側 */
+        .left {
+            width: 15%;
+            height: 100%;
+            background: lightpink;
+            float: left;
+            position: fixed;
+            top: 5%;
+            /* z-index: 2; */
+
+        }
+
+        .left:hover {
+            /* 加上垂直卷軸 */
+            overflow-y: auto;
+            /* 滑鼠移開會跳到最上面，要用JS才能取消 */
+        }
+
+        /* 左側按鈕 */
+        .left-button {
+            background: white;
+            text-align: left;
+            padding: 20px 20px;
+            margin: auto;
+        }
+
+        .left-button:hover {
+            background: lightgray;
+            border-radius: 10%;
+            width: 80%;
+            margin: auto;
+        }
+
+        /* 登入區 */
+        .sign {
+            padding: 20px 20px;
+            text-align: left;
+        }
+
+        .sign-text {
+            padding-bottom: 10px;
+        }
+
+        /* 登入按鈕 */
+        .sign-in {
+            width: 100px;
+            background: white;
+            color: rgb(46, 46, 136);
+            text-align: center;
+            border: 1px solid lightgray;
+            border-radius: 35%;
+        }
+
+        .sign-in:hover {
+            background: rgb(199, 225, 247);
+        }
+
+        .a-textDecoration {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* 右側 */
+        .container {
+            background: yellow;
+            width: 85%;
+            height: 95%;
+            float: right;
+            /* .top會蓋到.right，待修改 */
+        }
+
+        .box {
+            /* 確保寬度和高度包括 padding 和 border */
+            box-sizing: border-box;
+            width: 300px;
+            height: 300px;
+            background: limegreen;
+            padding: 10px 10px;
+            display: inline-block;
+            text-align: center;
+            /* 讓溢出的內容隱藏 */
+            overflow: hidden;
+        }
+
+        .video {
+            border-radius: 5%;
+            width: 280px;
+            height: 150px;
+            margin: auto;
+        }
+
+        .video-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            float: left;
+            /* 下方的字也要靠右 */
+        }
+
+        .box p {
+            text-align: left;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 最上方 -->
+    <div class="top">
+        <img src="./youtubeLogo.jpg" class="logo">
+        <div class="sign-in sign-in-top">登入</div>
+    </div>
+
+    <!-- 左側 -->
+    <div class="left">
+        <div class="left-button">首頁</div>
+        <div class="left-button">shorts</div>
+        <div class="left-button">訂閱內容</div>
+        <hr>
+        <div class="left-button">你的內容</div>
+        <div class="left-button">觀看紀錄</div>
+        <hr>
+        <div class="sign">
+            <div class="sign-text">登入帳戶即可對影片表示喜歡、發布留言及訂閱頻道。</div>
+            <div class="sign-in">登入</div>
+        </div>
+        <hr>
+        <div class="left-title">探索</div>
+        <div class="left-button">發燒影片</div>
+        <div class="left-button">音樂</div>
+        <div class="left-button">電影</div>
+        <div class="left-button">直播</div>
+        <div class="left-button">遊戲</div>
+        <div class="left-button">新聞</div>
+        <div class="left-button">體育</div>
+        <div class="left-button">Podcast</div>
+        <hr>
+        <div class="left-button">瀏覽頻道</div>
+        <hr>
+        <div class="left-title">更多YouTube功能</div>
+        <div class="left-button">YouTube Premium</div>
+        <div class="left-button">YouTube Music</div>
+        <div class="left-button">YouTube Kids</div>
+        <hr>
+        <div class="left-button">設定</div>
+        <div class="left-button">檢舉紀錄</div>
+        <div class="left-button">說明</div>
+        <div class="left-button">提供意見</div>
+        <hr>
+        <div>
+            <a href="#" class="a-textDecoration">簡介</a>
+            <a href="#" class="a-textDecoration">媒體</a>
+            <a href="#" class="a-textDecoration">著作權</a>
+            <a href="#" class="a-textDecoration">與我們聯絡</a>
+            <a href="#" class="a-textDecoration">創作者</a>
+            <a href="#" class="a-textDecoration">廣告</a>
+            <a href="#" class="a-textDecoration">開發人員</a>
+            <br>
+            <a href="#" class="a-textDecoration">條款</a>
+            <a href="#" class="a-textDecoration">隱私權</a>
+            <a href="#" class="a-textDecoration">政策與安全性</a>
+            <a href="#" class="a-textDecoration">YouTube運作方式</a>
+            <a href="#" class="a-textDecoration">測試新功能</a>
+            <a href="#" class="a-textDecoration"></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/78HOnJiE8Uo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAlfq7X0wAnPE_OTL0t58Ek-LxIAQ" class="video">
+            <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <p>5歲弟願意割肉救罕病姊！醫生一驗：他也會發病@newsebc <br>
+                東森新聞 CH51 <br>
+                觀看次數：10萬次
+                1 年</p>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/8RNfOikz3Is/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5480R7l-jb4RKDn8llM0FM-XxaA" class="video">
+            <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <p>【初配信】こんにちは！ぺこらマミーです♪【ママライブ/ぺこらママ】
+                Pekora Ch. 兎田ぺこら<br>
+                觀看次數：179萬次 直播時間：19 小時前</p>
+        </div>
+        <div class=" box">
+            <img src="https://i.ytimg.com/vi/4u8HofxJlXQ/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB8ueDE8goHtMw5S0MYH4sYeNZWug" class="video">
+            <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <p>差勁的大錢坑 台灣邦交國 【海地為啥這麼慘?】爛到連中國都不想挖 <br>
+                觀看次數：22萬次
+            </p>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/KRnOaW8Ll3Q/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQIKrM4RXjwZmXVPXd1VY-Ws8w2g" class="video">
+            <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <p>前進東台灣！竟抽到最荒車站...沒有便利商店、晚餐在雜貨店伙食，還遇到一百歲的早餐老闆【電車吃漢EP3】｜Dcard.Video
+                Dcard Video<br>
+                觀看次數：62萬次 3 天前</p>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/Cv4CHfw0auM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLABUCy5S5EyNnJaoNUXCij0M5ZbCA" class="video">
+            <img src="https://yt3.ggpht.com/pEyQUOkU5pRvn0w6uru0qv5zLBb00tPKCjUEe-02GCHYjRBTezwWhfEwNi-6GVmsC6M95jbV=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <p>上班時間的「籃球場」閒人！空氣投籃的意義？絕對要假摔？公園阿伯都超強？神秘戰術口號？《哈哈台街訪》EP147【哈哈台】
+                HahaTai 哈哈台<br>
+                觀看次數：40萬次 2 週前</p>
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/300/200/?random=1" class="video">
+            <p>請在民間各項口氣交給，我家夏天僅供最好委託意外進了部分國人</p>
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/300/200/?random=2" class="video">
+            <p>最大詳細內容下來詳細台南只要金幣比較祝。</p>
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/300/200/?random=3" class="video">
+            <p>代理身上溫暖答案頓時螢幕，天下帶著，民。</p>
+        </div>
+        <div class="box">
+            <img src="https://picsum.photos/300/200/?random=4" class="video">
+            <p>我就不錯東京，無門桃園近期次數，起點前。</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
