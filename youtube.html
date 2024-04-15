@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>youtube</title>
+    <!--引入font awesome -->
+    <link rel="stylesheet" href="./css/all.css">
     <style>
         body {
             margin: 0;
@@ -14,18 +16,91 @@
         .top {
             width: 100%;
             height: 5%;
-            /* background: red; */
+            background: white;
             position: fixed;
+        }
+
+        /* 三條線 */
+        .three {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .logo {
             position: absolute;
+            width: 100px;
+            left: 50px;
             /* 垂直置中 */
             top: 50%;
             transform: translateY(-50%);
         }
 
-        .sign-in-top {
+        /* 搜尋欄位 */
+        .search {
+            width: 250px;
+            height: 30px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0;
+            border-radius: 50%;
+        }
+
+        .search input {
+            box-sizing: border-box;
+            appearance: none;
+            /* background: white; */
+            box-sizing: border-box;
+            border: 1px solid lightgrey;
+            width: 150px;
+            height: 30px;
+            /* 分別指定左上、右上、右下和左下的角落半徑。 */
+            border-radius: 15px 0 0 15px;
+
+        }
+
+        .botton {
+            box-sizing: border-box;
+            border: 1px solid lightgrey;
+            width: 50px;
+            height: 30px;
+            box-sizing: border-box;
+            background: lightgray;
+            display: inline-block;
+            text-align: center;
+            font-size: 10px;
+            position: absolute;
+            top: 0;
+            left: 150px;
+            line-height: 30px;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .botton:hover {
+            background: gray;
+        }
+
+        .microphone {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: lightgray;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .microphone:hover {
+            background: gray;
+        }
+
+        .top .sign-in-top {
             position: absolute;
             right: 0;
             /* 垂直置中 */
@@ -79,11 +154,12 @@
         /* 登入按鈕 */
         .sign-in {
             width: 100px;
+            height: 20px;
             background: white;
             color: rgb(46, 46, 136);
             text-align: center;
             border: 1px solid lightgray;
-            border-radius: 35%;
+            border-radius: 10px;
         }
 
         .sign-in:hover {
@@ -97,11 +173,11 @@
 
         /* 右側 */
         .container {
-            background: yellow;
             width: 85%;
             height: 95%;
             float: right;
-            /* .top會蓋到.right，待修改 */
+            position: relative;
+            z-index: -1;
         }
 
         .box {
@@ -115,6 +191,8 @@
             text-align: center;
             /* 讓溢出的內容隱藏 */
             overflow: hidden;
+            position: relative;
+            top: 50px;
         }
 
         .video {
@@ -125,16 +203,21 @@
         }
 
         .video-logo {
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             float: left;
-            /* 下方的字也要靠右 */
+            margin-top: 10px;
+            margin-right: 5px;
         }
 
-        .box p {
-            text-align: left;
+        .video-text {
+            width: 240px;
+            height: 20%;
+            background: thistle;
             margin: 10px;
+            text-align: left;
+            display: flex;
         }
     </style>
 </head>
@@ -142,45 +225,52 @@
 <body>
     <!-- 最上方 -->
     <div class="top">
+        <div class="three"><i class="fa-solid fa-bars"></i></div>
         <img src="./youtubeLogo.jpg" class="logo">
-        <div class="sign-in sign-in-top">登入</div>
+        <div class="search">
+            <input type="text" placeholder="輸入">
+            <div class="botton"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="microphone"><i class="fa-solid fa-microphone"></i></div>
+        </div>
+        <div class="sign-in sign-in-top"> <i class="fa-regular fa-circle-user"></i> 登入</div>
     </div>
 
     <!-- 左側 -->
     <div class="left">
-        <div class="left-button">首頁</div>
-        <div class="left-button">shorts</div>
-        <div class="left-button">訂閱內容</div>
+
+        <div class="left-button"><i class="fa-solid fa-house"></i> 首頁</div>
+        <div class="left-button"><i class="fa-solid fa-bolt-lightning"></i>shorts</div>
+        <div class="left-button"><i class="fa-solid fa-layer-group"></i>訂閱內容</div>
         <hr>
         <div class="left-button">你的內容</div>
-        <div class="left-button">觀看紀錄</div>
+        <div class="left-button"> <i class="fa-solid fa-rotate-left"></i> 觀看紀錄</div>
         <hr>
         <div class="sign">
             <div class="sign-text">登入帳戶即可對影片表示喜歡、發布留言及訂閱頻道。</div>
-            <div class="sign-in">登入</div>
+            <div class="sign-in"> <i class="fa-regular fa-circle-user"></i> 登入</div>
         </div>
         <hr>
         <div class="left-title">探索</div>
-        <div class="left-button">發燒影片</div>
+        <div class="left-button"><i class="fa-solid fa-fire"></i>發燒影片</div>
         <div class="left-button">音樂</div>
-        <div class="left-button">電影</div>
+        <div class="left-button"><i class="fa-solid fa-clapperboard"></i>電影</div>
         <div class="left-button">直播</div>
-        <div class="left-button">遊戲</div>
+        <div class="left-button"><i class="fa-solid fa-gamepad"></i>遊戲</div>
         <div class="left-button">新聞</div>
         <div class="left-button">體育</div>
         <div class="left-button">Podcast</div>
         <hr>
-        <div class="left-button">瀏覽頻道</div>
+        <div class="left-button"><i class="fa-regular fa-circle-plus"></i>瀏覽頻道</div>
         <hr>
         <div class="left-title">更多YouTube功能</div>
-        <div class="left-button">YouTube Premium</div>
-        <div class="left-button">YouTube Music</div>
-        <div class="left-button">YouTube Kids</div>
+        <div class="left-button"><i class="fa-brands fa-youtube" style="color: red;"></i> YouTube Premium</div>
+        <div class="left-button"><i class="fa-brands fa-youtube" style="color: red;"></i> YouTube Music</div>
+        <div class="left-button"><i class="fa-brands fa-youtube" style="color: red;"></i> YouTube Kids</div>
         <hr>
-        <div class="left-button">設定</div>
-        <div class="left-button">檢舉紀錄</div>
-        <div class="left-button">說明</div>
-        <div class="left-button">提供意見</div>
+        <div class="left-button"><i class="fa-solid fa-gear"></i> 設定</div>
+        <div class="left-button"><i class="fa-regular fa-flag"></i> 檢舉紀錄</div>
+        <div class="left-button"><i class="fa-solid fa-circle-info"></i> 說明</div>
+        <div class="left-button"><i class="fa-regular fa-comment"></i> 提供意見</div>
         <hr>
         <div>
             <a href="#" class="a-textDecoration">簡介</a>
@@ -203,56 +293,180 @@
         <div class="box">
             <img src="https://i.ytimg.com/vi/78HOnJiE8Uo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAlfq7X0wAnPE_OTL0t58Ek-LxIAQ" class="video">
             <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
-            <p>5歲弟願意割肉救罕病姊！醫生一驗：他也會發病@newsebc <br>
+            <div class="video-text">
+                5歲弟願意割肉救罕病姊！醫生一驗：他也會發病@newsebc <br>
                 東森新聞 CH51 <br>
-                觀看次數：10萬次
-                1 年</p>
+                觀看次數：10萬次 1 年
+            </div>
         </div>
         <div class="box">
             <img src="https://i.ytimg.com/vi/8RNfOikz3Is/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5480R7l-jb4RKDn8llM0FM-XxaA" class="video">
             <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
-            <p>【初配信】こんにちは！ぺこらマミーです♪【ママライブ/ぺこらママ】
+            <div class="video-text">
+                【初配信】こんにちは！ぺこらマミーです♪【ママライブ/ぺこらママ】 <br>
                 Pekora Ch. 兎田ぺこら<br>
-                觀看次數：179萬次 直播時間：19 小時前</p>
+                觀看次數：179萬次直播時間：19 小時前</div>
         </div>
         <div class=" box">
             <img src="https://i.ytimg.com/vi/4u8HofxJlXQ/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB8ueDE8goHtMw5S0MYH4sYeNZWug" class="video">
             <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
-            <p>差勁的大錢坑 台灣邦交國 【海地為啥這麼慘?】爛到連中國都不想挖 <br>
+            <div class="video-text">
+                差勁的大錢坑 台灣邦交國 【海地為啥這麼慘?】爛到連中國都不想挖 <br>
+                cheap <br>
                 觀看次數：22萬次
-            </p>
+            </div>
         </div>
         <div class="box">
             <img src="https://i.ytimg.com/vi/KRnOaW8Ll3Q/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQIKrM4RXjwZmXVPXd1VY-Ws8w2g" class="video">
             <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
-            <p>前進東台灣！竟抽到最荒車站...沒有便利商店、晚餐在雜貨店伙食，還遇到一百歲的早餐老闆【電車吃漢EP3】｜Dcard.Video
+            <div class="video-text">
+                前進東台灣！竟抽到最荒車站...沒有便利商店、晚餐在雜貨店伙食，還遇到一百歲的早餐老闆【電車吃漢EP3】｜Dcard.Video
                 Dcard Video<br>
-                觀看次數：62萬次 3 天前</p>
+                觀看次數：62萬次 3 天前</div>
         </div>
         <div class="box">
             <img src="https://i.ytimg.com/vi/Cv4CHfw0auM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLABUCy5S5EyNnJaoNUXCij0M5ZbCA" class="video">
             <img src="https://yt3.ggpht.com/pEyQUOkU5pRvn0w6uru0qv5zLBb00tPKCjUEe-02GCHYjRBTezwWhfEwNi-6GVmsC6M95jbV=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
-            <p>上班時間的「籃球場」閒人！空氣投籃的意義？絕對要假摔？公園阿伯都超強？神秘戰術口號？《哈哈台街訪》EP147【哈哈台】
+            <div class="video-text">
+                上班時間的「籃球場」閒人！空氣投籃的意義？絕對要假摔？公園阿伯都超強？神秘戰術口號？《哈哈台街訪》EP147【哈哈台】 <br>
                 HahaTai 哈哈台<br>
-                觀看次數：40萬次 2 週前</p>
+                觀看次數：40萬次 2 週前</div>
         </div>
         <div class="box">
-            <img src="https://picsum.photos/300/200/?random=1" class="video">
-            <p>請在民間各項口氣交給，我家夏天僅供最好委託意外進了部分國人</p>
+            <img src="https://i.ytimg.com/vi/Sc8SIVoUxKY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1A9ycqvBxLtm46xp_J1LwB7y4kQ" class="video">
+            <img src="https://yt3.ggpht.com/ytc/AIdro_kKarBi7aEKAQHmq5gXwJCCvdT81Mtqzph8HYQFJJz7tg=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                2024最新爆笑動畫《熊貓4》，一只會功夫的熊貓，成為大俠拯救世界！ <br>
+                科幻桃小柏【官方频道】<br>
+                觀看次數：18萬次人
+            </div>
         </div>
         <div class="box">
-            <img src="https://picsum.photos/300/200/?random=2" class="video">
-            <p>最大詳細內容下來詳細台南只要金幣比較祝。</p>
+            <img src="https://i.ytimg.com/vi/3cfpjsNzSOI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCuvIcn_6ehbo-r8wiYfpcaIS4eoQ" class="video">
+            <img src="https://yt3.ggpht.com/2MccjXWkPX6tR_Lkq3MN9IeizfMCjg2KucwDChf9pDCnTjY_5ZSRePBs6LI_l50poGNB1Uit-w=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                【國中生上課睡覺挑戰權威？ 老師當場爆氣質問全班嚇傻 】｜@CrazyRichard <br>
+                台灣達人秀 <br>
+                觀看次數：180萬次 3 年前</div>
         </div>
         <div class="box">
-            <img src="https://picsum.photos/300/200/?random=3" class="video">
-            <p>代理身上溫暖答案頓時螢幕，天下帶著，民。</p>
+            <img src="https://i.ytimg.com/vi/NExF3IvWtdY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCE86SDqrQhDeH1WBr_R63ktJWtxg" class="video">
+            <img src="https://yt3.ggpht.com/ytc/AIdro_npmQCj4WbDHZBJn8APwAEfceKA2VS5a6r6OtAUDSBS_ys=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                【尊】試著做了完全透明的點心大餐 ! ? <br>
+                人生肥宅x尊<br>
+                觀看次數：18萬次 1 天前
+            </div>
         </div>
         <div class="box">
-            <img src="https://picsum.photos/300/200/?random=4" class="video">
-            <p>我就不錯東京，無門桃園近期次數，起點前。</p>
+            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
+            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
+                Cas van de Pol <br>
+                觀看次數：565萬次 5 個月前
+            </div>
         </div>
-
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/aNtuq764PKE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCQwOvFFaXhT6wKYHEEW2uVQHSi0A" class="video">
+            <img src="https://yt3.ggpht.com/N0fJxO5NeYo9bcJX4wZSXTBGkq26ywbOegfC6Ezjg5tndciQB7tgKEaHY-LJYlO61pK3_-04=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                【館長精華】字幕－見證歷史的一刻！館長糖豆人首度吃雞！ <br>
+                館長惡名昭彰 <br>
+                觀看次數：94萬次 1 年前
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/SaHRA10JqTk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBcWTvz8b-gFMWUGkL_3ileUqw1JA" class="video">
+            <img src="https://yt3.ggpht.com/fyRm5obOphcI2ggTYhqC1JF_qH0Uh6JjZKJ_EghzWv1OWCmqduHcVDJ1Xv6ESSyf4lZPiKuS2A=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                台灣vlog🇹🇼｜和日本老公的台北City Walk，挑戰中文點餐🤣、旅遊穿搭紀錄✨｜水瓶小姐 <br>
+                水瓶小姐 <br>
+                觀看次數：1.7萬次 22 小時前
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/boICERxg6tM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBW03Eax8QBrWMG-jfrbPSJLBCWIA" class="video">
+            <img src="https://yt3.ggpht.com/FQQ2F1yzQDPMyT35OzH0Suj_Tov9Zb7AM2TjT6bCJek_5ZTEYzwOLFzSlbVzMpMV7S4oLyxGcQ=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                【#博音】EP115 | 計劃趕不上變化：胎死腹中的企劃與段子神偷心得 <br>
+                曾博恩 <br>
+                觀看次數：4.3萬次 6 天前
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/hCiXyw-z53k/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC3ZiL51Up3DNXHA6Gah2ZZ3nIYcw" class="video">
+            <img src="https://yt3.ggpht.com/7au1YhDqy6mb9I3xY52LpcoxABw6tXHYCcQPivUy1jPXMw8omaDfdh-QSMKF5ebJKa58o6s8=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                【醉日本】大阪｜超級乾貨懶人包！自由行必看 大阪旅遊地圖全攻略｜地下鐵圖簡化 近郊景點 各種交通票券 JRPASS 阪急 京阪 近鐵 <br>
+                醉旅宿 Merry Journey <br>
+                觀看次數：13萬次 1 個月前
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
+            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
+                Cas van de Pol <br>
+                觀看次數：565萬次 5 個月前
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
+            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
+                Cas van de Pol <br>
+                觀看次數：565萬次 5 個月前
+            </div>
+        </div>
+        <!--  -->
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/x_tssVIWE1E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCBYrL5xh3Rjshnuv1SG-iM-p8niw" class="video">
+            <img src="https://yt3.ggpht.com/pEyQUOkU5pRvn0w6uru0qv5zLBb00tPKCjUEe-02GCHYjRBTezwWhfEwNi-6GVmsC6M95jbV=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                [ENG] 上班時間的「新北烏來區」閒人。台灣第一座遊樂園？找到泰雅族文面大哥！日文都超好？當地人泡溫泉嗎？《哈哈台地區的街訪》EP64【哈哈台】<br>
+                HahaTai 哈哈台 <br>
+                觀看次數：20萬次 12 天前
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
+            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
+                Cas van de Pol <br>
+                觀看次數：565萬次 5 個月前
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
+            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
+                Cas van de Pol <br>
+                觀看次數：565萬次 5 個月前
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
+            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
+                Cas van de Pol <br>
+                觀看次數：565萬次 5 個月前
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
+            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
+                Cas van de Pol <br>
+                觀看次數：565萬次 5 個月前
+            </div>
+        </div>
     </div>
 </body>
 
