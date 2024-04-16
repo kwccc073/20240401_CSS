@@ -15,8 +15,8 @@
         /* 最上方 */
         .top {
             width: 100%;
-            height: 5%;
-            background: white;
+            height: 10%;
+            background: paleturquoise;
             position: fixed;
         }
 
@@ -24,7 +24,7 @@
         .three {
             position: absolute;
             left: 20px;
-            top: 50%;
+            top: 25%;
             transform: translateY(-50%);
         }
 
@@ -33,17 +33,17 @@
             width: 100px;
             left: 50px;
             /* 垂直置中 */
-            top: 50%;
+            top: 25%;
             transform: translateY(-50%);
         }
 
         /* 搜尋欄位 */
         .search {
-            width: 250px;
+            width: 400px;
             height: 30px;
             position: absolute;
             left: 50%;
-            top: 50%;
+            top: 25%;
             transform: translate(-50%, -50%);
             font-size: 0;
             border-radius: 50%;
@@ -55,7 +55,7 @@
             /* background: white; */
             box-sizing: border-box;
             border: 1px solid lightgrey;
-            width: 150px;
+            width: 300px;
             height: 30px;
             /* 分別指定左上、右上、右下和左下的角落半徑。 */
             border-radius: 15px 0 0 15px;
@@ -74,7 +74,7 @@
             font-size: 10px;
             position: absolute;
             top: 0;
-            left: 150px;
+            left: 300px;
             line-height: 30px;
             border-radius: 0 15px 15px 0;
         }
@@ -93,6 +93,7 @@
             top: 50%;
             transform: translateY(-50%);
             text-align: center;
+            line-height: 30px;
             font-size: 15px;
         }
 
@@ -100,19 +101,28 @@
             background: gray;
         }
 
+        /* 關鍵字 */
+        .keyword {
+            position: absolute;
+            left: 250px;
+            bottom: 25%;
+            transform: translateY(50%);
+            /* 排列 */
+        }
+
+        /* 登入按鈕 */
         .top .sign-in-top {
             position: absolute;
             right: 0;
             /* 垂直置中 */
-            top: 50%;
+            top: 25%;
             transform: translateY(-50%);
         }
 
         /* 左側 */
         .left {
-            width: 15%;
+            width: 200px;
             height: 100%;
-            background: lightpink;
             float: left;
             position: fixed;
             top: 5%;
@@ -124,6 +134,10 @@
             /* 加上垂直卷軸 */
             overflow-y: auto;
             /* 滑鼠移開會跳到最上面，要用JS才能取消 */
+        }
+
+        .left-title {
+            margin: 20px;
         }
 
         /* 左側按鈕 */
@@ -173,7 +187,7 @@
 
         /* 右側 */
         .container {
-            width: 85%;
+            width: calc(100% - 200px);
             height: 95%;
             float: right;
             position: relative;
@@ -185,7 +199,6 @@
             box-sizing: border-box;
             width: 300px;
             height: 300px;
-            background: limegreen;
             padding: 10px 10px;
             display: inline-block;
             text-align: center;
@@ -214,7 +227,6 @@
         .video-text {
             width: 240px;
             height: 20%;
-            background: thistle;
             margin: 10px;
             text-align: left;
             display: flex;
@@ -233,17 +245,29 @@
             <div class="microphone"><i class="fa-solid fa-microphone"></i></div>
         </div>
         <div class="sign-in sign-in-top"> <i class="fa-regular fa-circle-user"></i> 登入</div>
+        <!-- 關鍵字 -->
+        <input type="checkbox" class="keyword" checked> 全部
+        <!-- <input type="checkbox" value="" class="keyword">
+        <input type="checkbox" value="" class="keyword">
+        <input type="checkbox" value="" class="keyword">
+        <input type="checkbox" value="" class="keyword">
+        <input type="checkbox" value="" class="keyword">
+        <input type="checkbox" value="" class="keyword">
+        <input type="checkbox" value="" class="keyword">
+        <input type="checkbox" value="" class="keyword">
+        <input type="checkbox" value="" class="keyword">
+        <input type="checkbox" value="" class="keyword"> -->
     </div>
 
     <!-- 左側 -->
     <div class="left">
 
         <div class="left-button"><i class="fa-solid fa-house"></i> 首頁</div>
-        <div class="left-button"><i class="fa-solid fa-bolt-lightning"></i>shorts</div>
-        <div class="left-button"><i class="fa-solid fa-layer-group"></i>訂閱內容</div>
+        <div class="left-button"><i class="fa-solid fa-bolt-lightning"></i> shorts</div>
+        <div class="left-button"><i class="fa-solid fa-layer-group"></i> 訂閱內容</div>
         <hr>
-        <div class="left-button">你的內容</div>
-        <div class="left-button"> <i class="fa-solid fa-rotate-left"></i> 觀看紀錄</div>
+        <div class="left-button"><i class="fa-regular fa-folder-open"></i> 你的內容</div>
+        <div class="left-button"><i class="fa-solid fa-rotate-left"></i> 觀看紀錄</div>
         <hr>
         <div class="sign">
             <div class="sign-text">登入帳戶即可對影片表示喜歡、發布留言及訂閱頻道。</div>
@@ -251,16 +275,16 @@
         </div>
         <hr>
         <div class="left-title">探索</div>
-        <div class="left-button"><i class="fa-solid fa-fire"></i>發燒影片</div>
-        <div class="left-button">音樂</div>
-        <div class="left-button"><i class="fa-solid fa-clapperboard"></i>電影</div>
-        <div class="left-button">直播</div>
-        <div class="left-button"><i class="fa-solid fa-gamepad"></i>遊戲</div>
-        <div class="left-button">新聞</div>
-        <div class="left-button">體育</div>
-        <div class="left-button">Podcast</div>
+        <div class="left-button"><i class="fa-solid fa-fire"></i> 發燒影片</div>
+        <div class="left-button"><i class="fa-solid fa-music"></i> 音樂</div>
+        <div class="left-button"><i class="fa-solid fa-clapperboard"></i> 電影</div>
+        <div class="left-button"><i class="fa-solid fa-signal"></i> 直播</div>
+        <div class="left-button"><i class="fa-solid fa-gamepad"></i> 遊戲</div>
+        <div class="left-button"><i class="fa-regular fa-newspaper"></i> 新聞</div>
+        <div class="left-button"><i class="fa-solid fa-trophy"></i> 體育</div>
+        <div class="left-button"><i class="fa-solid fa-podcast"></i> Podcast</div>
         <hr>
-        <div class="left-button"><i class="fa-regular fa-circle-plus"></i>瀏覽頻道</div>
+        <div class="left-button"><i class="fa-solid fa-circle-plus"></i> 瀏覽頻道</div>
         <hr>
         <div class="left-title">更多YouTube功能</div>
         <div class="left-button"><i class="fa-brands fa-youtube" style="color: red;"></i> YouTube Premium</div>
@@ -413,15 +437,14 @@
             </div>
         </div>
         <div class="box">
-            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
-            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <img src="https://i.ytimg.com/vi/Sc8SIVoUxKY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1A9ycqvBxLtm46xp_J1LwB7y4kQ" class="video">
+            <img src="https://yt3.ggpht.com/ytc/AIdro_kKarBi7aEKAQHmq5gXwJCCvdT81Mtqzph8HYQFJJz7tg=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
             <div class="video-text">
-                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
-                Cas van de Pol <br>
-                觀看次數：565萬次 5 個月前
+                2024最新爆笑動畫《熊貓4》，一只會功夫的熊貓，成為大俠拯救世界！ <br>
+                科幻桃小柏【官方频道】<br>
+                觀看次數：18萬次人
             </div>
         </div>
-        <!--  -->
         <div class="box">
             <img src="https://i.ytimg.com/vi/x_tssVIWE1E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCBYrL5xh3Rjshnuv1SG-iM-p8niw" class="video">
             <img src="https://yt3.ggpht.com/pEyQUOkU5pRvn0w6uru0qv5zLBb00tPKCjUEe-02GCHYjRBTezwWhfEwNi-6GVmsC6M95jbV=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
@@ -432,42 +455,39 @@
             </div>
         </div>
         <div class="box">
-            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
-            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <img src="https://i.ytimg.com/vi/SaHRA10JqTk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBcWTvz8b-gFMWUGkL_3ileUqw1JA" class="video">
+            <img src="https://yt3.ggpht.com/fyRm5obOphcI2ggTYhqC1JF_qH0Uh6JjZKJ_EghzWv1OWCmqduHcVDJ1Xv6ESSyf4lZPiKuS2A=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
             <div class="video-text">
-                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
-                Cas van de Pol <br>
-                觀看次數：565萬次 5 個月前
+                台灣vlog🇹🇼｜和日本老公的台北City Walk，挑戰中文點餐🤣、旅遊穿搭紀錄✨｜水瓶小姐 <br>
+                水瓶小姐 <br>
+                觀看次數：1.7萬次 22 小時前
             </div>
         </div>
         <div class="box">
-            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
-            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <img src="https://i.ytimg.com/vi/8RNfOikz3Is/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5480R7l-jb4RKDn8llM0FM-XxaA" class="video">
+            <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
             <div class="video-text">
-                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
-                Cas van de Pol <br>
-                觀看次數：565萬次 5 個月前
+                【初配信】こんにちは！ぺこらマミーです♪【ママライブ/ぺこらママ】 <br>
+                Pekora Ch. 兎田ぺこら<br>
+                觀看次數：179萬次直播時間：19 小時前</div>
+        </div>
+        <div class=" box">
+            <img src="https://i.ytimg.com/vi/4u8HofxJlXQ/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB8ueDE8goHtMw5S0MYH4sYeNZWug" class="video">
+            <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <div class="video-text">
+                差勁的大錢坑 台灣邦交國 【海地為啥這麼慘?】爛到連中國都不想挖 <br>
+                cheap <br>
+                觀看次數：22萬次
             </div>
         </div>
         <div class="box">
-            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
-            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
+            <img src="https://i.ytimg.com/vi/KRnOaW8Ll3Q/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQIKrM4RXjwZmXVPXd1VY-Ws8w2g" class="video">
+            <img src="https://yt3.ggpht.com/0F4bP75xh5jpDkC4HrPAEos6ZTnjvM7UrSLPK3JTOsIQHaehRUoce-jFpHsa5dqukc1CDvKG9II=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
             <div class="video-text">
-                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
-                Cas van de Pol <br>
-                觀看次數：565萬次 5 個月前
-            </div>
+                前進東台灣！竟抽到最荒車站...沒有便利商店、晚餐在雜貨店伙食，還遇到一百歲的早餐老闆【電車吃漢EP3】｜Dcard.Video
+                Dcard Video<br>
+                觀看次數：62萬次 3 天前</div>
         </div>
-        <div class="box">
-            <img src="https://i.ytimg.com/vi/Gtjgk2uHHRw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI2VI_apdgAL5SvYZLRCZPrYj-6A" class="video">
-            <img src="https://yt3.ggpht.com/ytc/AIdro_nlrAVNei2j0fknmp7Yft6ddbeg25hjJosWWNuwlScSVX0=s68-c-k-c0x00ffffff-no-rj" class="video-logo">
-            <div class="video-text">
-                The Ultimate "Dragon Ball Z" Recap Cartoon <br>
-                Cas van de Pol <br>
-                觀看次數：565萬次 5 個月前
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
